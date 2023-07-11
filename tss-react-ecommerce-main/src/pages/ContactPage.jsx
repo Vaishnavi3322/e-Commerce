@@ -41,7 +41,7 @@ const ContactPage = () => {
                 <button
                   className="my-2 px-4 mx-auto btn btn-dark"
                   type="submit"
-                  enabled
+                  disabled
                 >
                   Send
                 </button>

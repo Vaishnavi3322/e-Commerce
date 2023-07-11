@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import data from "../data";
 
 const Cart = () => {
-
+  // eslint-disable-next-line
   const EmptyCart = () => {
     return (
       <div className="container">

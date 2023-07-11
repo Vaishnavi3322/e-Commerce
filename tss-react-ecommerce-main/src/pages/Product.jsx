@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Footer, Navbar } from "../components";
-import data from "../data";
+import axios from "axios";
 
 const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
-
+  const [error, setError] = useState(false);
   useEffect(() => {
-    data.filter((item) => {
-      console.log(item.id, id)
-      if (item.id.toString() === id) {
-        setProduct(item)
-        return item
-      }
-      return null
+    axios.get(`http://localhost:5000/api/product/${id}`).then((res) => {
+      console.log(res.data.product[0])
+      setProduct(res.data.product[0])
+    }).catch((err) => {
+      console.log(err)
+      setError(true)
     })
-  })
+  }, [id])
 
   const ShowProduct = () => {
     return (
@@ -43,7 +42,7 @@ const Product = () => {
               <p className="lead">{product.description}</p>
               <button
                 className="btn btn-outline-dark"
-              // onClick={() => addProduct(product)}
+                // onClick={() => addProduct(product)}
               >
                 Add to Cart
               </button>
@@ -56,12 +55,13 @@ const Product = () => {
       </>
     );
   };
-
   return (
     <>
       <Navbar />
       <div className="container">
-        <div className="row"><ShowProduct /></div>
+        <div className="row">
+          {error ? <p className='text-danger display-6 text-center'>Something went wrong</p> : <ShowProduct />}
+        </div>
       </div>
       <Footer />
     </>

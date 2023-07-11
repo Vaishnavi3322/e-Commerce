@@ -3,7 +3,7 @@ import { Footer, Navbar } from "../components";
 import { Link } from "react-router-dom";
 import data from "../data";
 const Checkout = () => {
-
+  // eslint-disable-next-line
   const EmptyCart = () => {
     return (
       <div className="container">
@@ -66,7 +66,7 @@ const Checkout = () => {
                   <h4 className="mb-0">Billing address</h4>
                 </div>
                 <div className="card-body">
-                  <form className="needs-validation" novalidate>
+                  <form className="needs-validation">
                     <div className="row g-3">
                       <div className="col-sm-6 my-1">
                         <label for="firstName" className="form-label">
@@ -170,11 +170,6 @@ const Checkout = () => {
                         <select className="form-select" id="state" required>
                           <option value="">Choose...</option>
                           <option>Punjab</option>
-                          <option>Kerala</option>
-                          <option>Maharashtra</option>
-                          <option>Madhya Pradesh</option>
-                          <option>Uttar Pradesh</option>
-                          <option>Delhi</option>
                         </select>
                         <div className="invalid-feedback">
                           Please provide a valid state.

@@ -39,11 +39,11 @@ const Register = () => {
                                 />
                             </div>
                             <div className="form  my-3">
-                                <label for="ConfirmPassword">Confirm Password</label>
+                                <label for="confirmPassword">Confirm Password</label>
                                 <input
                                     type="password"
                                     className="form-control"
-                                    id="ConfirmPassword"
+                                    id="confirmPassword"
                                     placeholder="Confirm Password"
                                 />
                             </div>
@@ -51,7 +51,7 @@ const Register = () => {
                                 <p>Already has an account? <Link to="/login" className="text-decoration-underline text-info">Login</Link> </p>
                             </div>
                             <div className="text-center">
-                                <button className="my-2 mx-auto btn btn-dark" type="submit" enabled>
+                                <button className="my-2 mx-auto btn btn-dark" type="submit" disabled>
                                     Register
                                 </button>
                             </div>
